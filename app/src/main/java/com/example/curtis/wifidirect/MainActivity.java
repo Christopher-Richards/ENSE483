@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.net.wifi.p2p.WifiP2pManager.PeerListListener;
 import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.net.wifi.p2p.WifiP2pManager;
@@ -24,6 +25,9 @@ import java.util.List;
 
     public class MainActivity extends Activity {
 
+    static string[] device_names = new string [] {};//to hold discovered device names
+    static boolean connections_allowed;
+
     private final IntentFilter intentFilter = new IntentFilter();
     private WifiP2pManager mManager;
     Channel mChannel;
@@ -32,7 +36,36 @@ import java.util.List;
     private List<WifiP2pDevice> Peers = new ArrayList<WifiP2pDevice>();
 
 
+    Button connection_status_button = (Button) findViewById(R.id.B_connection_status);
+        public void changeConnectionAvailability(){
+            if(connections_allowed) {
+                connection_status_button.setBackgroundColor(0xc3624);
+                connections_allowed=false;
+            }
+            else {
+                connection_status_button.setBackgroundColor(0x6aa121);
+                connections_allowed=true;
+            }
+        }
+
+     Button search_for_devices_button = (Button) findViewById(R.id.B_search_for_devices);
+        public void searchForDevices(){
+
+            //search for devices, populate list
+
+        }
+
+
+
+
+
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
+        connections_allowed = false;
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("TAG","You made a log");

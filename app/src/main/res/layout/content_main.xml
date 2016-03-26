@@ -13,8 +13,68 @@
     tools:showIn="@layout/activity_main"
     tools:context="com.example.curtis.wifidirect.MainActivity">
 
-    <TextView
-        android:text="Hello World!"
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/back">
+
+        <TextView
+            android:text="Make a connection"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:oreintation="vertical">
+
+        <Button
+            android:id="@+id/B_search_for_devices"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:text="@string/refresh"
+            android:onClick="searchForDevices" />
+
+            <LinearLayout
+                android:layout_width="4dp"
+                android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/B_connection_status"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:text="@string/disallow_connects"
+            android:onClick="changeConnectionAvailability" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"/>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
 </RelativeLayout>
